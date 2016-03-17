@@ -74,7 +74,7 @@
             comSubmit.submit();
         }
          
-        function fn_openBoardDetail(obj){
+		function fn_openBoardDetail(obj){
             var comSubmit = new ComSubmit();
             comSubmit.setUrl("<c:url value='/sample/openBoardDetail.do' />");
             comSubmit.addParam("IDX", obj.parent().find("#IDX").val());
