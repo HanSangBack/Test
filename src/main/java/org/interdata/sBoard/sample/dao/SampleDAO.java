@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 public class SampleDAO extends AbstractDAO{
 
 	@SuppressWarnings("unchecked")
-    public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception{
-        return (List<Map<String, Object>>)selectList("sample.selectBoardList", map);
-    }
+	public Map<String, Object> selectBoardList(Map<String, Object> map) throws Exception{
+	    return (Map<String, Object>)selectPagingList("sample.selectBoardList", map);
+	}
  
 	public void insertBoard(Map<String, Object> map) throws Exception{
 	    insert("sample.insertBoard", map);

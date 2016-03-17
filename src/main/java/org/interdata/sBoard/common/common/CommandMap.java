@@ -1,13 +1,13 @@
 package org.interdata.sBoard.common.common;
-
+ 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
+ 
 public class CommandMap {
-	Map<String,Object> map = new HashMap<String,Object>();
-    
+    Map<String,Object> map = new HashMap<String,Object>();
+     
     public Object get(String key){
         return map.get(key);
     }

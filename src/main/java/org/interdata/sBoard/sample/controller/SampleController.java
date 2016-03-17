@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+
 @Controller
 public class SampleController {
 	Logger log = Logger.getLogger(this.getClass());
@@ -23,11 +25,13 @@ public class SampleController {
     private SampleService sampleService;
 	
 	@RequestMapping(value="/sample/openBoardList.do")
-    public ModelAndView openSampleBoardList(Map<String,Object> commandMap) throws Exception{
-        ModelAndView mv = new ModelAndView("/sample/boardList");
-         
-        List<Map<String,Object>> list = sampleService.selectBoardList(commandMap);
-        mv.addObject("list", list);
+    public ModelAndView openSampleBoardList(CommandMap commandMap) throws Exception{
+		ModelAndView mv = new ModelAndView("/sample/boardList");
+	     
+	    Map<String,Object> resultMap = sampleService.selectBoardList(commandMap.getMap());
+	     
+	    mv.addObject("paginationInfo", (PaginationInfo)resultMap.get("paginationInfo"));
+	    mv.addObject("list", resultMap.get("result"));
          
         return mv;
     }

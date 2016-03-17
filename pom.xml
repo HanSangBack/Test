@@ -19,7 +19,19 @@
 			<name>ORACLE JDBC Repository</name>
 			<url>http://maven.jahia.org/maven2</url>
 		</repository>
+		
+		<repository>
+		    <id>egovframe</id>
+		    <url>http://www.egovframe.go.kr/maven/</url>
+		    <releases>
+		        <enabled>true</enabled>
+		    </releases>
+		    <snapshots>
+		        <enabled>false</enabled>
+		    </snapshots>
+		</repository>
 	</repositories>
+	
 	<dependencies>
 		<!-- mybatis -->
 		<dependency>
@@ -206,6 +218,13 @@
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.7.3</version>
+		</dependency>
+		
+		<!-- egov -->
+		<dependency>
+			<groupId>egovframework.rte</groupId>
+			<artifactId>egovframework.rte.ptl.mvc</artifactId>
+			<version>3.5.0</version>
 		</dependency>
 			       
 	</dependencies>
